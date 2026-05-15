@@ -17,3 +17,12 @@ Route::get('/user/{id}', function ($id) {
 Route::get('/post/{slug?}', function ($slug = 'default-post') {
     return "Post Slug: $slug";
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/test', function () {
+    $route = route('dashboard');
+    return "The URL for the dashboard route is: $route";
+});
